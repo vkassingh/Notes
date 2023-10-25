@@ -1,0 +1,150 @@
+https://github.com/Aryan-Khanijo/Bookshop-Management-System-CPP-Project/blob/master/BookShopManagement.cpp
+
+
+#include <conio.h> //hold screen till user press ay key
+#include <iostream>
+#include <mysql.h>
+#include <sstream>
+#include <windows.h>
+
+#define HOST "127.0.0.1"
+#define USER "root"
+#define PASS /*put the password of mysql in between.*/
+#define DATABASE "Management"
+#define PORT 4000
+#define PASSWORD /*set a numeric password for your application*/
+
+
+using namespace std;
+
+
+//  GLOBAL VARIABLES
+
+MYSQL * conn;
+MYSQL_RES *res_set;
+MYSQL_ROW row;
+stringstream stmt;
+const char * q;
+string query;
+
+typedef struct {
+    int date;
+    int month;
+    int year;
+} date; 
+
+
+// CLASSES
+class Books {
+    int id; //primary key
+    string name;
+    string author;
+    int price;
+    int quantity;
+    
+    public: 
+    void addBook();
+    void updateBookPrice();
+    void searchBook();
+    void displayBookDetails();
+    
+};
+
+class Suppliers {
+  int id;  //primary key
+  int name;
+  int mobNo;
+  string address;
+  int pinCode
+  
+  public:
+  void addSupply();
+  void removeSupplier();
+  void searchId();
+    
+};
+
+class Purchases {
+    int orderId; //prim key
+    date DateOrdered;
+    int PriceofBook;
+    string BookName;
+    int quantity;
+    int TotalPrice;
+    int supplierId;
+    
+    public:
+    void newOrder();
+    void cancelOrder();
+    void markRecieved();
+    
+};
+
+class Employees {
+    int id;
+    int employeesName;
+    int designation;
+    int salary;
+    string address;
+    int pincode;
+    
+    public: 
+    void addEmployee();
+    void promote();
+    void SearchEmployee();
+    void increaseSalary();
+    
+};
+
+
+class Members {
+    int id;
+    string name;
+    string address;
+    int mobNo;
+    date membershipBeginDt;
+    date membershipEndDt;
+    
+    public: 
+    void addMember();
+    void searchMember();
+    void removeMember();
+    void refreshMemebership();
+};
+
+class YearlyTurnover{
+    
+    int invoiceId;
+    int memberId;
+    int BookId;
+    int totalQty;
+    int totalPrice;
+    year year;
+    
+    public: 
+    void add();
+    void calcualteTotalSales();
+}
+
+
+void Books:: addBook(){
+    
+}
+
+void Books:: updateBookPrice(){
+    
+}
+
+void Books:: searchBook(){
+    
+}
+
+void Books:: displayBookDetails(){
+    
+}
+
+
+int main() {
+	// your code goes here
+	return 0;
+}
